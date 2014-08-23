@@ -11,7 +11,6 @@ class ApplicationController < ActionController::Base
   	begin
   		session["username"] = params["username"]
   		body = JSON.parse(Nestful.get("https://api.github.com/users/#{session["username"]}?access_token=002496798f849c2b89d8341bc86e43c13b834e47",{:format => :json}).body)
-  		session["name"] = body["name"]
   		redirect_to "/show_repositories"
   	rescue => e
   		puts e
@@ -26,16 +25,16 @@ class ApplicationController < ActionController::Base
 
   def show_repo
   	@repo = params[:repo]
-  	`git clone https://github.com/#{session["username"]}/#{@repo}.git`
-
+  	
   	@achievements = []
 
-  	@num_of_commits = `git -C #{@repo} shortlog -sn`.scan(/(\d+)\s(.+)/).sort { |x, y| x[0].to_i <=> y[0].to_i }.reverse
+  	#largest # of commits
+
+  	@num_of_commits = JSON.parse(Nestful.get("https://api.github.com/repos/#{session["username"]}/#{@repo}/commits?access_token=002496798f849c2b89d8341bc86e43c13b834e47",{:format => :json}).body).collect { |x| x["committer"]["login"] }.group_by { |x| x }.collect { |k, v| [k, v.count] }
   	@largest_commit_pos = 0
   	i = 1
   	@num_of_commits.each do |commit|
-  		puts commit[1]
-  		if commit[1].strip == session["name"].strip
+  		if commit[0].strip == session["username"].strip
   			@largest_commit_pos = i
   		end
   		i = i + 1
@@ -43,6 +42,38 @@ class ApplicationController < ActionController::Base
 
   	if @largest_commit_pos == 1
   		@achievements << "Largest # of Commits"
+  	end
+
+  	#closed tickets
+
+  	@closed_issues = JSON.parse(Nestful.get("https://api.github.com/repos/#{session["username"]}/#{@repo}/issues?access_token=002496798f849c2b89d8341bc86e43c13b834e47&state=closed",{:format => :json}).body).group_by { |x| x["assignee"] == nil ? nil : x["assignee"]["login"] }.collect { |k, v| [k, v.count] }
+  	if @closed_issues != nil
+  		@my_closed_issues = @closed_issues.find { |x| x[0] == session["username"] }
+  		if @my_closed_issues != nil
+  			@my_closed_issues = @my_closed_issues[1].to_i
+  			puts @my_closed_issues
+  			if @my_closed_issues >= 1 && Achievement.where(user: session["username"], repository: @repo, achievement: 'Stow Away (closed 1 Ticket)').count == 0
+  				@achievements << "Stow Away (closed 1 Ticket)"
+  			end
+  			if @my_closed_issues >= 5 && Achievement.where(user: session["username"], repository: @repo, achievement: 'Cabin Boy (closed 5 Tickets)').count == 0
+  				@achievements << "Cabin Boy (closed 5 Tickets)"
+  			end
+  			if @my_closed_issues >= 10 && Achievement.where(user: session["username"], repository: @repo, achievement: 'Oarsman (closed 10 Tickets)').count == 0
+  				@achievements << "Oarsman (closed 10 Tickets)"
+  			end
+  			if @my_closed_issues >= 25 && Achievement.where(user: session["username"], repository: @repo, achievement: 'Deckhand (closed 25 Tickets)').count == 0
+  				@achievements << "Deckhand (closed 25 Tickets)"
+  			end
+  			if @my_closed_issues >= 50 && Achievement.where(user: session["username"], repository: @repo, achievement: 'First Mate (closed 50 Tickets)').count == 0
+  				@achievements << "First Mate (closed 50 Tickets)"
+  			end
+  			if @my_closed_issues >= 100 && Achievement.where(user: session["username"], repository: @repo, achievement: 'Captain (closed 100 Tickets)').count == 0
+  				@achievements << "Captain (closed 100 Tickets)"
+  			end
+  			if @my_closed_issues >= 1000 && Achievement.where(user: session["username"], repository: @repo, achievement: 'Admin (closed 1000 Tickets)').count == 0
+  				@achievements << "Admin (closed 1000 Tickets)"
+  			end
+  		end
   	end
 
   	@achievements.each do |achievement|
@@ -62,8 +93,6 @@ class ApplicationController < ActionController::Base
   			a.save!
   		end
   	end
-
-  	`rm -rf #{@repo}`
   end
 
   def achievements

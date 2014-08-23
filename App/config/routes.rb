@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   post '/submit_github_username' => "application#submit_github_username"
   get '/show_repositories' => "application#show_repositories"
   get '/show_repo/:repo' => "application#show_repo"
+  get '/show_repo/:repo/achievements' => "application#achievements"
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase

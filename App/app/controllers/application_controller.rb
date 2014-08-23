@@ -28,17 +28,46 @@ class ApplicationController < ActionController::Base
   	@repo = params[:repo]
   	`git clone https://github.com/#{session["username"]}/#{@repo}.git`
 
-  	@commits = `git -C #{@repo} shortlog -sn`.scan(/(\d+)\s(.+)/).sort { |x, y| x[0].to_i <=> y[0].to_i }.reverse
-  	@commit_pos = 0
+  	@achievements = []
+
+  	@num_of_commits = `git -C #{@repo} shortlog -sn`.scan(/(\d+)\s(.+)/).sort { |x, y| x[0].to_i <=> y[0].to_i }.reverse
+  	@largest_commit_pos = 0
   	i = 1
-  	@commits.each do |commit|
+  	@num_of_commits.each do |commit|
   		puts commit[1]
   		if commit[1].strip == session["name"].strip
-  			@commit_pos = i
+  			@largest_commit_pos = i
   		end
   		i = i + 1
   	end
 
+  	if @largest_commit_pos == 1
+  		@achievements << "Largest # of Commits"
+  	end
+
+  	@achievements.each do |achievement|
+  		found = false
+  		Achievement.where(user: session["username"], repository: @repo, achievement: achievement).each do |record|
+  			if record.achieved.to_date == Date.today
+  				found = true
+  			end
+  		end
+
+  		if !found
+  			a = Achievement.new
+  			a.user = session["username"]
+  			a.repository = @repo
+  			a.achievement = achievement
+  			a.achieved = Time.now
+  			a.save!
+  		end
+  	end
+
   	`rm -rf #{@repo}`
+  end
+
+  def achievements
+  	@repo = params[:repo]
+  	@achievements = Achievement.where(user: session["username"], repository: @repo).sort { |x,y| x.achieved <=> y.achieved }.reverse.group_by { |a| a.achieved.to_date }
   end
 end

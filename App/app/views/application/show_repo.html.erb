@@ -1,3 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>App</title>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <script type="text/javascript">
+  	$(function () { 
+      $('#container').highcharts({
+        chart: {
+                plotBackgroundColor: null,
+                plotBorderWidth: null,
+                plotShadow: false
+            },
+            title: {
+                text: 'Commits per Person'
+            },
+            tooltip: {
+                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+            },
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    dataLabels: {
+                        enabled: false
+                    },
+                    showInLegend: true
+                }
+            },
+            series: [{
+                type: 'pie',
+                name: 'Commits',
+                data: [
+                    <% @num_of_commits.each do |commit| %>
+                    	<%= raw "['#{commit[1]}',#{commit[0]}]," %>
+                    <% end %>
+                ]
+            }]
+      });
+    });
+  </script>
+  <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
 <div class="container-fluid">
 	<div class="row-fluid">
 		<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -12,31 +58,32 @@
 		</nav>
 	</div>
 	<div style="margin-top: 70px;"></div>
-	<div class="row-fluid">
-		<div class="col-xs-12" style="text-align:center;">
-		    <h2>You are #<%= @commit_pos %> of <%= @commits.size %></h2>
-  		    <div id="piechart" style="width: 280px; height: 280px;"></div>
+	<div class="row">
+		<div class="col-xs-12">
+			<% @achievements.each do |achievement| %>
+				<div class="alert alert-success">
+		  			<a ref="#" class="alert-link"><%= achievement %></a>
+				</div>
+			<% end %>
+			<div class="pull-right">
+				<a href="/show_repo/<%= @repo %>/achievements">Show Past Achievements</a>
+			</div>
+			<div class="clearfix"></div>
+			<ul class="nav nav-tabs" id="#mytabs">
+			  <li class="active"><a href="#num_of_commits" data-toggle="tab">Commits <% if @largest_commit_pos == 1 %><span class="badge"><%= image_tag "thumb-up-sm.svg" %></span><% end %></a></li>
+			</ul>
+			<div class="tab-content">
+			  <div class="tab-pane active" id="num_of_commits">
+			  	<div style="margin-top: 70px;"></div>
+				<div class="row-fluid">
+					<div class="col-xs-12" style="text-align:center;">
+			  		    <div id="container" style="width:100%; height:280;"></div>
+					</div>
+				</div>
+			  </div>
+			</div>
 		</div>
-		<script type="text/javascript">
-		  	$(document).ready(function() {
-			  google.load("visualization", "1", {packages:["corechart"]});
-		      google.setOnLoadCallback(drawChart);
-		      function drawChart() {
-		        var data = google.visualization.arrayToDataTable([
-		          ['Committer', 'Commits'],
-		          <% @commits.each do |commit| %>
-		          	<%= raw "['#{commit[1]}', #{commit[0]}]," %>
-		          <% end %>
-		        ]);
-
-		        var options = {
-		          title: 'Commits by User'
-		        };
-
-		        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-		        chart.draw(data, options);
-		      }
-	  	  	});
-	    </script>
 	</div>
 </div>
+</body>
+</html>

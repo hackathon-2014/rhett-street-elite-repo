@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleIdentifier</key>
-	<string>com.adago.GithubAchieve</string>
+	<string>com.adago.Achieve</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
@@ -38,6 +38,6 @@
 		<string>Icon-Small-40@2x</string>
 	</array>
 	<key>CFBundleDisplayName</key>
-	<string>GithubAchieve</string>
+	<string>Achieve!</string>
 </dict>
 </plist>

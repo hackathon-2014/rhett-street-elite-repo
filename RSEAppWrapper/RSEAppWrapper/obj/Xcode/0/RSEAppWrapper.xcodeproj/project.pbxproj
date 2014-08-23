@@ -1,0 +1,266 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		38120C220000000000000000 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BA318C00000000000000000 /* UIKit.framework */; };
+		19A7AF550000000000000000 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D38BBF30000000000000000 /* MapKit.framework */; };
+		2EDB17ED0000000000000000 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 326C248B0000000000000000 /* Foundation.framework */; };
+		2245FA360000000000000000 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25D706D40000000000000000 /* CoreGraphics.framework */; };
+		13F6BB670000000000000000 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1787C8050000000000000000 /* Info.plist */; };
+		292A23FF0000000000000000 /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2CBB309D0000000000000000 /* Entitlements.plist */; };
+		1754E4E90000000000000000 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AE5F1870000000000000000 /* Default-568h@2x.png */; };
+		57FA5D300000000000000000 /* style.css in Resources */ = {isa = PBXBuildFile; fileRef = 910B27100000000000000000 /* style.css */; };
+		21D527A70000000000000000 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 256634450000000000000000 /* MainStoryboard.storyboard */; };
+		28C45DC70000000000000000 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C556A650000000000000000 /* Default.png */; };
+		16EF1EB10000000000000000 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A802B4F0000000000000000 /* Default@2x.png */; };
+		519DF9B00000000000000000 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AAEC3900000000000000000 /* Icon.png */; };
+		3344A0850000000000000000 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 36D5AD230000000000000000 /* Icon@2x.png */; };
+		3DC4E3430000000000000000 /* Icon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 155EFE100000000000000000 /* Icon-60@2x.png */; };
+		2BEFA42D0000000000000000 /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F80B0CB0000000000000000 /* Icon-Small.png */; };
+		1A1A65170000000000000000 /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DAB71B50000000000000000 /* Icon-Small@2x.png */; };
+		282BB4730000000000000000 /* Icon-Small-40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BBCC1110000000000000000 /* Icon-Small-40@2x.png */; };
+		2616D97A0000000000000000 /* AppDelegate.h in Sources */ = {isa = PBXBuildFile; fileRef = 29A7E6180000000000000000 /* AppDelegate.h */; };
+		1B30D0840000000000000000 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EC1DD220000000000000000 /* AppDelegate.m */; };
+		33F545BA0000000000000000 /* HybridViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 378652580000000000000000 /* HybridViewController.h */; };
+		928AE5200000000000000000 /* HybridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9BAF000000000000000000 /* HybridViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		382CF35D0000000000000000 /* RSEAppWrapper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "RSEAppWrapper.app"; path = "RSEAppWrapper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3BA318C00000000000000000 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "UIKit.framework"; path = "System/Library/Frameworks/UIKit.framework"; sourceTree = SDKROOT; };
+		1D38BBF30000000000000000 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "MapKit.framework"; path = "System/Library/Frameworks/MapKit.framework"; sourceTree = SDKROOT; };
+		326C248B0000000000000000 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "Foundation.framework"; path = "System/Library/Frameworks/Foundation.framework"; sourceTree = SDKROOT; };
+		25D706D40000000000000000 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "CoreGraphics.framework"; path = "System/Library/Frameworks/CoreGraphics.framework"; sourceTree = SDKROOT; };
+		1787C8050000000000000000 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info.plist"; path = "Info.plist"; sourceTree = "<group>"; };
+		2CBB309D0000000000000000 /* Entitlements.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Entitlements.plist"; path = "Entitlements.plist"; sourceTree = "<group>"; };
+		1AE5F1870000000000000000 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		910B27100000000000000000 /* style.css */ = {isa = PBXFileReference; name = "style.css"; path = "style.css"; sourceTree = "<group>"; };
+		256634450000000000000000 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "MainStoryboard.storyboard"; path = "MainStoryboard.storyboard"; sourceTree = "<group>"; };
+		2C556A650000000000000000 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default.png"; path = "Default.png"; sourceTree = "<group>"; };
+		1A802B4F0000000000000000 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "Default@2x.png"; sourceTree = "<group>"; };
+		8AAEC3900000000000000000 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon.png"; path = "Icon.png"; sourceTree = "<group>"; };
+		36D5AD230000000000000000 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		155EFE100000000000000000 /* Icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-60@2x.png"; path = "Icon-60@2x.png"; sourceTree = "<group>"; };
+		2F80B0CB0000000000000000 /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small.png"; path = "Icon-Small.png"; sourceTree = "<group>"; };
+		1DAB71B50000000000000000 /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small@2x.png"; path = "Icon-Small@2x.png"; sourceTree = "<group>"; };
+		2BBCC1110000000000000000 /* Icon-Small-40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small-40@2x.png"; path = "Icon-Small-40@2x.png"; sourceTree = "<group>"; };
+		29A7E6180000000000000000 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "AppDelegate.h"; path = "AppDelegate.h"; sourceTree = "<group>"; };
+		1EC1DD220000000000000000 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "AppDelegate.m"; path = "AppDelegate.m"; sourceTree = "<group>"; };
+		378652580000000000000000 /* HybridViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "HybridViewController.h"; path = "HybridViewController.h"; sourceTree = "<group>"; };
+		CB9BAF000000000000000000 /* HybridViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "HybridViewController.m"; path = "HybridViewController.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		331FB51A0000000000000000 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				38120C220000000000000000 /* UIKit.framework in Frameworks */,
+				19A7AF550000000000000000 /* MapKit.framework in Frameworks */,
+				2EDB17ED0000000000000000 /* Foundation.framework in Frameworks */,
+				2245FA360000000000000000 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		133926A80000000000000000 = {
+			isa = PBXGroup;
+			children = (
+				3DD2DAF40000000000000000 /* RSEAppWrapper */,
+				217D59200000000000000000 /* Frameworks */,
+				88600CE00000000000000000 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		88600CE00000000000000000 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				382CF35D0000000000000000 /* RSEAppWrapper.app */,
+			);
+			name = "Products";
+			sourceTree = "<group>";
+		};
+		217D59200000000000000000 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3BA318C00000000000000000 /* UIKit.framework */,
+				1D38BBF30000000000000000 /* MapKit.framework */,
+				326C248B0000000000000000 /* Foundation.framework */,
+				25D706D40000000000000000 /* CoreGraphics.framework */,
+			);
+			name = "Frameworks";
+			sourceTree = "<group>";
+		};
+		3DD2DAF40000000000000000 /* RSEAppWrapper */ = {
+			isa = PBXGroup;
+			children = (
+				29A7E6180000000000000000 /* AppDelegate.h */,
+				2C556A650000000000000000 /* Default.png */,
+				1A802B4F0000000000000000 /* Default@2x.png */,
+				1AE5F1870000000000000000 /* Default-568h@2x.png */,
+				2CBB309D0000000000000000 /* Entitlements.plist */,
+				378652580000000000000000 /* HybridViewController.h */,
+				8AAEC3900000000000000000 /* Icon.png */,
+				36D5AD230000000000000000 /* Icon@2x.png */,
+				155EFE100000000000000000 /* Icon-60@2x.png */,
+				2F80B0CB0000000000000000 /* Icon-Small.png */,
+				1DAB71B50000000000000000 /* Icon-Small@2x.png */,
+				2BBCC1110000000000000000 /* Icon-Small-40@2x.png */,
+				1787C8050000000000000000 /* Info.plist */,
+				256634450000000000000000 /* MainStoryboard.storyboard */,
+				910B27100000000000000000 /* style.css */,
+				1D12C8610000000000000000 /* Supporting Files */,
+			);
+			name = "RSEAppWrapper";
+			sourceTree = "<group>";
+		};
+		1D12C8610000000000000000 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1EC1DD220000000000000000 /* AppDelegate.m */,
+				CB9BAF000000000000000000 /* HybridViewController.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2CE1242F0000000000000000 /* RSEAppWrapper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2D79CD830000000000000000 /* Build configuration list for PBXNativeTarget "RSEAppWrapper" */;
+			buildPhases = (
+				1DB969660000000000000000 /* Sources */,
+				331FB51A0000000000000000 /* Frameworks */,
+				6A408F100000000000000000 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "RSEAppWrapper";
+			productName = "RSEAppWrapper";
+			productReference = 382CF35D0000000000000000 /* RSEAppWrapper.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		222DFE550000000000000000 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 1F359B0B0000000000000000 /* Build configuration list for PBXProject "RSEAppWrapper" */;
+			compatibilityVersion = "Xcode 3.2";
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 133926A80000000000000000;
+			productRefGroup = 88600CE00000000000000000 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2CE1242F0000000000000000 /* RSEAppWrapper */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6A408F100000000000000000 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				13F6BB670000000000000000 /* Info.plist in Resources */,
+				292A23FF0000000000000000 /* Entitlements.plist in Resources */,
+				1754E4E90000000000000000 /* Default-568h@2x.png in Resources */,
+				57FA5D300000000000000000 /* style.css in Resources */,
+				21D527A70000000000000000 /* MainStoryboard.storyboard in Resources */,
+				28C45DC70000000000000000 /* Default.png in Resources */,
+				16EF1EB10000000000000000 /* Default@2x.png in Resources */,
+				519DF9B00000000000000000 /* Icon.png in Resources */,
+				3344A0850000000000000000 /* Icon@2x.png in Resources */,
+				3DC4E3430000000000000000 /* Icon-60@2x.png in Resources */,
+				2BEFA42D0000000000000000 /* Icon-Small.png in Resources */,
+				1A1A65170000000000000000 /* Icon-Small@2x.png in Resources */,
+				282BB4730000000000000000 /* Icon-Small-40@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1DB969660000000000000000 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2616D97A0000000000000000 /* AppDelegate.h in Sources */,
+				1B30D0840000000000000000 /* AppDelegate.m in Sources */,
+				33F545BA0000000000000000 /* HybridViewController.h in Sources */,
+				928AE5200000000000000000 /* HybridViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		20B1CCB00000000000000000 /* MonoTouch */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				SDKROOT = iphoneos;
+			};
+			name = MonoTouch;
+		};
+		148275310000000000000000 /* MonoTouch */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				PRODUCT_NAME = "RSEAppWrapper";
+				WRAPPER_EXTENSION = app;
+			};
+			name = MonoTouch;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1F359B0B0000000000000000 /* Build configuration list for PBXProject "RSEAppWrapper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				20B1CCB00000000000000000 /* MonoTouch */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = MonoTouch;
+		};
+		2D79CD830000000000000000 /* Build configuration list for PBXNativeTarget "RSEAppWrapper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				148275310000000000000000 /* MonoTouch */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = MonoTouch;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 222DFE550000000000000000 /* Project object */;
+}

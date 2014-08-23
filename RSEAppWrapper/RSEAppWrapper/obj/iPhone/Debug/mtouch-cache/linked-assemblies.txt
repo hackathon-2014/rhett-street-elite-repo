@@ -1,0 +1,5 @@
+/Users/bulletshot60/Projects/RSEAppWrapper/RSEAppWrapper/obj/iPhone/Debug/mtouch-cache/Link/mscorlib.dll
+/Users/bulletshot60/Projects/RSEAppWrapper/RSEAppWrapper/obj/iPhone/Debug/mtouch-cache/Link/monotouch.dll
+/Users/bulletshot60/Projects/RSEAppWrapper/RSEAppWrapper/obj/iPhone/Debug/mtouch-cache/Link/RSEAppWrapper.exe
+/Users/bulletshot60/Projects/RSEAppWrapper/RSEAppWrapper/obj/iPhone/Debug/mtouch-cache/Link/System.dll
+/Users/bulletshot60/Projects/RSEAppWrapper/RSEAppWrapper/obj/iPhone/Debug/mtouch-cache/Link/System.Web.Services.dll

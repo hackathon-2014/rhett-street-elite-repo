@@ -3,7 +3,7 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="RSEAppWrapper/Info.plist">
     <Files>
       <File FileName="RSEAppWrapper/AppDelegate.cs" Line="1" Column="1" />
-      <File FileName="RSEAppWrapper/HybridViewController.cs" Line="59" Column="59" />
+      <File FileName="RSEAppWrapper/HybridViewController.cs" Line="1" Column="1" />
       <File FileName="RSEAppWrapper/Models/Model1.cs" Line="1" Column="1" />
       <File FileName="RSEAppWrapper/Main.cs" Line="1" Column="1" />
       <File FileName="RSEAppWrapper/Info.plist" />

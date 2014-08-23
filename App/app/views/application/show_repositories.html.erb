@@ -1,0 +1,27 @@
+<div class="container-fluid">
+	<div class="row-fluid">
+		<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+			<div class="container">
+				<div class="col-xs-2">
+					<a href="/" class="btn btn-default navbar-btn">&lt; Back</a>
+				</div>
+				<div class="col-xs-8" style="text-align: center; margin-top:8px;">
+					<h4>Achieve!</h4>
+				</div>
+			</div>
+		</nav>
+	</div>
+	<div style="margin-top: 70px;"></div>
+	<div class="row-fluid">
+		<div class="col-xs-12" style="text-align:center;">
+			<% if flash[:error] %>
+				<div class="alert alert-danger"><%= flash[:error] %></div>
+			<% end %>
+			<ul class="list-group">
+				<% @repos.each do |repo| %>
+					<a href="/show_repo/<%= repo %>" class="list-group-item"><%= repo %></a>
+				<% end %>
+			</ul>
+		</div>
+	</div>
+</div>

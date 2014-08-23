@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleIdentifier</key>
-	<string>com.adago.App</string>
+	<string>com.adago.GithubAchieve</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
@@ -24,6 +24,7 @@
 	</array>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
+		<string>UIInterfaceOrientationPortrait</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
@@ -37,6 +38,6 @@
 		<string>Icon-Small-40@2x</string>
 	</array>
 	<key>CFBundleDisplayName</key>
-	<string>App</string>
+	<string>GithubAchieve</string>
 </dict>
 </plist>

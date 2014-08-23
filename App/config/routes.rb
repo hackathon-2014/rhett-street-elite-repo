@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   #   get 'products/:id' => 'catalog#view'
   post '/submit_github_username' => "application#submit_github_username"
   get '/show_repositories' => "application#show_repositories"
+  get '/show_all_achievements' => "application#show_all_achievements"
   get '/show_repo/:repo' => "application#show_repo"
   get '/show_repo/:repo/achievements' => "application#achievements"
 

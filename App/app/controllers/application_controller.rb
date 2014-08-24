@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
 
   def submit_github_username
   	begin
-  		session["username"] = params["username"].downcase
+  		session["username"] = params["username"].downcase.strip
   		body = JSON.parse(Nestful.get("https://api.github.com/users/#{session["username"]}?access_token=002496798f849c2b89d8341bc86e43c13b834e47",{:format => :json}).body)
   		redirect_to "/show_repositories"
   	rescue => e

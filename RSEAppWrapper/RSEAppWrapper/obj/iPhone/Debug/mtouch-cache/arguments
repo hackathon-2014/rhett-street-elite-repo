@@ -1,14 +1,14 @@
 # Version: 7.2.6.28 (606f31a)
-# [first argument, ignore] # /Users/bulletshot60/Projects/RSEAppWrapper/RSEAppWrapper/bin/iPhone/Debug/mtouch.exe
+# [first argument, ignore] # /Users/bulletshot60/git/hackathon_app/RSEAppWrapper/RSEAppWrapper/bin/iPhone/Debug/mtouch.exe
 /Developer/MonoTouch/usr/bin/mtouch \
 	-sdkroot \
 	/Applications/Xcode.app/Contents/Developer \
 	--cache \
-	/Users/bulletshot60/Projects/RSEAppWrapper/RSEAppWrapper/obj/iPhone/Debug/mtouch-cache \
+	/Users/bulletshot60/git/hackathon_app/RSEAppWrapper/RSEAppWrapper/obj/iPhone/Debug/mtouch-cache \
 	--nomanifest \
 	--nosign \
 	-dev \
-	/Users/bulletshot60/Projects/RSEAppWrapper/RSEAppWrapper/bin/iPhone/Debug/RSEAppWrapper.app \
+	/Users/bulletshot60/git/hackathon_app/RSEAppWrapper/RSEAppWrapper/bin/iPhone/Debug/RSEAppWrapper.app \
 	-r \
 	/Developer/MonoTouch/usr/lib/mono/2.1/System.dll \
 	-r \
@@ -24,6 +24,6 @@
 	-sdk \
 	7.1 \
 	-targetver \
-	7.0 \
+	7.1 \
 	--abi=armv7 \
-	/Users/bulletshot60/Projects/RSEAppWrapper/RSEAppWrapper/bin/iPhone/Debug/RSEAppWrapper.exe \
+	/Users/bulletshot60/git/hackathon_app/RSEAppWrapper/RSEAppWrapper/bin/iPhone/Debug/RSEAppWrapper.exe \

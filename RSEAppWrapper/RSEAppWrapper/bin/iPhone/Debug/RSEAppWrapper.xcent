@@ -6,10 +6,10 @@
 	<string>F5373HJWRD</string>
 	<key>keychain-access-groups</key>
 	<array>
-		<string>F5373HJWRD.com.adago.RSEAppWrapper</string>
+		<string>F5373HJWRD.com.adago.Achieve</string>
 	</array>
 	<key>application-identifier</key>
-	<string>F5373HJWRD.com.adago.RSEAppWrapper</string>
+	<string>F5373HJWRD.com.adago.Achieve</string>
 	<key>get-task-allow</key>
 	<true/>
 </dict>

@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
 
   def submit_github_username
   	begin
-  		session["username"] = params["username"]
+  		session["username"] = params["username"].downcase
   		body = JSON.parse(Nestful.get("https://api.github.com/users/#{session["username"]}?access_token=002496798f849c2b89d8341bc86e43c13b834e47",{:format => :json}).body)
   		redirect_to "/show_repositories"
   	rescue => e
@@ -26,7 +26,9 @@ class ApplicationController < ActionController::Base
   end
 
   def show_all_achievements
-  	@achievements = Achievement.where(user: session["username"]).group_by { |x| x["repository"] }.collect { |k, v| [k, v.group_by { |y| y["achieved"].to_date }.sort { |a, b| a["achieved"] <=> b["achieved"] }.reverse.collect { |k1, k2| [k1, k2] }]}.sort { |x, y| x[0] <=> y[0] }
+  	@achievements = Achievement.where(user: session["username"])
+    @achievements = @achievements.group_by { |x| x["repository"] }
+    @achievements = @achievements.collect { |k, v| [k, v.group_by { |y| y["achieved"].to_date }.sort { |a, b| a["achieved"] <=> b["achieved"] }.reverse.collect { |k1, k2| [k1, k2] }]}.sort { |x, y| x[0] <=> y[0] }
   end
 
   def show_repositories

@@ -90,7 +90,7 @@ class ApplicationController < ActionController::Base
   				m.save!
   			else
   				m = m.first
-  				if @my_closed_issues > m.commits
+  				if @my_closed_issues > m.pulls
   					m.pulls = @my_closed_issues
   				end
   				m.save!
@@ -135,7 +135,7 @@ class ApplicationController < ActionController::Base
   				m.save!
   			else
   				m = m.first
-  				if @my_merged_issues > m.commits
+  				if @my_merged_issues > m.pulls
   					m.pulls = @my_merged_issues
   				end
   				m.save!

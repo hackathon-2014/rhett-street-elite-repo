@@ -7,6 +7,12 @@ class ApplicationController < ActionController::Base
 
   end
 
+  def world_github_standings
+  	@most_commits = MostCommits.all.sort { |a, b| a.commits <=> b.commits }.reverse
+  	@most_merged = MostMergedPulls.all.sort { |a, b| a.commits <=> b.commits }.reverse
+  	@most_closed = MostClosedPulls.all.sort { |a, b| a.commits <=> b.commits }.reverse
+  end
+
   def submit_github_username
   	begin
   		session["username"] = params["username"]
@@ -43,6 +49,19 @@ class ApplicationController < ActionController::Base
 	  		if commit[0] != nil
 		  		if commit[0].strip == session["username"].strip
 		  			@largest_commit_pos = i
+		  			m = MostCommits.where(user: session["username"])
+		  			if m.count == 0
+		  				m = MostCommits.new
+		  				m.commits = commit[1].to_i
+		  				m.user = session["username"]
+		  				m.save!
+		  			else
+		  				m = m.first
+		  				if commit[1].to_i > m.commits
+		  					m.commits = commit[1].to_i
+		  				end
+		  				m.save!
+		  			end
 		  		end
 		  	end
 	  		i = i + 1
@@ -61,6 +80,19 @@ class ApplicationController < ActionController::Base
 	  	@my_closed_issues = @closed_issues.find { |x| x[0] == session["username"] }
 		if @my_closed_issues != nil
 			@my_closed_issues = @my_closed_issues[1].to_i
+			m = MostClosedPulls.where(user: session["username"])
+  			if m.count == 0
+  				m = MostClosedPulls.new
+  				m.pulls = @my_closed_issues
+  				m.user = session["username"]
+  				m.save!
+  			else
+  				m = m.first
+  				if @my_closed_issues > m.commits
+  					m.pulls = @my_closed_issues
+  				end
+  				m.save!
+  			end
 			puts @my_closed_issues
 			if @my_closed_issues >= 1 && Achievement.where(user: session["username"], repository: @repo, achievement: 'Stow Away (closed 1 Ticket)').count == 0
 				@achievements << "Stow Away (closed 1 Ticket)"
@@ -93,6 +125,19 @@ class ApplicationController < ActionController::Base
 		@my_merged_issues = @merged_issues.find { |x| x[0] == session["username"] }
 		if @my_merged_issues != nil
 			@my_merged_issues = @my_merged_issues[1].to_i
+			m = MostMergedPulls.where(user: session["username"])
+  			if m.count == 0
+  				m = MostMergedPulls.new
+  				m.pulls = @my_merged_issues
+  				m.user = session["username"]
+  				m.save!
+  			else
+  				m = m.first
+  				if @my_merged_issues > m.commits
+  					m.pulls = @my_merged_issues
+  				end
+  				m.save!
+  			end
 			puts @my_merged_issues
 			if @my_merged_issues >= 1 && Achievement.where(user: session["username"], repository: @repo, achievement: 'Ignorant (1 Pull Approved)').count == 0
 				@achievements << "Ignorant (1 Pull Approved)"

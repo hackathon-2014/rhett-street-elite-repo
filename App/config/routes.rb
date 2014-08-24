@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get '/show_all_achievements' => "application#show_all_achievements"
   get '/show_repo/:repo' => "application#show_repo"
   get '/show_repo/:repo/achievements' => "application#achievements"
+  get '/world_github_standings' => "application#world_github_standings"
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase

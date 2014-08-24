@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140823190532) do
+ActiveRecord::Schema.define(version: 20140823233249) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,27 @@ ActiveRecord::Schema.define(version: 20140823190532) do
     t.string   "repository"
     t.string   "achievement"
     t.datetime "achieved"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "most_closed_pulls", force: true do |t|
+    t.string   "user"
+    t.integer  "pulls"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "most_commits", force: true do |t|
+    t.string   "user"
+    t.integer  "commits"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "most_merged_pulls", force: true do |t|
+    t.string   "user"
+    t.integer  "pulls"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
